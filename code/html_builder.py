@@ -392,7 +392,7 @@ class HTMLBuilder(FullPageMaker, ReferenceFinder):
         style_tag = etree.Element("style")
         self.css = self.CB.create_css(custom_css_path=custom_css_path)
         style_tag.text = self.css.css_text()
-        html_tree.find("/head").append(style_tag)
+        html_tree.find("./head").append(style_tag)
         return html_tree
 
     def get_modules_list(self):
